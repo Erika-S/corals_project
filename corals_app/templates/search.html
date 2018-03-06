@@ -1,0 +1,41 @@
+<!--DOCTYPE html-->
+
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block pagecontent %}
+<h1>I want to search by:</h1>
+<h5><sub>click a second time to deselect</sub></h5>
+
+
+<form>
+Reefs:<input type="checkbox" id="reefs" onclick="choose_reefs()"><br>
+Coral Species:<input type="checkbox" id="coral" onclick="choose_coral()"><br>
+I'm Just Exploring:<input type="checkbox" id="explore" onclick="choose_explore()"><br>
+</form>
+
+<script>
+
+function choose_reefs() { 
+    if (document.getElementById("reefs").checked) {
+        document.getElementById("coral").checked=false;
+        document.getElementById("explore").checked=false;
+    }
+}
+function choose_coral() { 
+    if (document.getElementById("coral").checked) {
+        document.getElementById("reefs").checked=false;
+        document.getElementById("explore").checked=false;
+    }
+}
+function choose_explore() { 
+    if (document.getElementById("explore").checked) {
+        document.getElementById("coral").checked=false;
+        document.getElementById("reefs").checked=false;
+    }
+}
+
+</script>
+<input type="button" value="Next">
+{% endblock %}

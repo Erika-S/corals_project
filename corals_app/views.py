@@ -7,6 +7,9 @@ from django.shortcuts import render
 
 from django.views.generic import TemplateView
 
+from .models import Coral
+
+
 # Create your views here.
 class HomePageView(TemplateView):
 	def get(self, request, *args, **kwargs):
@@ -19,5 +22,7 @@ class AboutPageView(TemplateView):
 class SearchPageView(TemplateView):
 	template_name = "search.html"
 
-class CoralTemplatePageView(TemplateView):
-	template_name = "coraltemplate.html"
+def coral_detail(request): 
+		coral = Coral.objects.get(id=3)
+		template_name = "coraltemplate.html"
+		return render(request, template_name, {'coral': coral})

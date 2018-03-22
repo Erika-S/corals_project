@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^$', views.HomePageView.as_view(), name="home"),
     url(r'^about/$', views.AboutPageView.as_view(), name="about"),
 	url(r'^search/$', views.SearchPageView.as_view(), name="search"),
-	url(r'^coraltemplate/$', views.CoralTemplatePageView.as_view(), name="coraltemplate"),
+	url(r'^coraltemplate/$', views.coral_detail, name="coraltemplate"),
 
 
 ]
